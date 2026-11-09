@@ -1,0 +1,33 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Licao {
+  id          Int            @id @default(autoincrement())
+  titulo      String         
+  categoria   String         
+  descricao   String?        
+  conteudos   ConteudoLicao[]
+  createdAt   DateTime       @default(now())
+}
+
+model ConteudoLicao {
+  id               Int      @id @default(autoincrement())
+  idioma           String   // "Inglês", "Espanhol", "Francês", "Mandarim"
+  termoEstrangeiro String   // Expressão no idioma
+  termoPortugues   String   // Tradução para Português
+  exemploFrase     String?  // Frase prática no aeroporto
+  licaoId          Int
+  licao            Licao    @relation(fields: [licaoId], references: [id], onDelete: Cascade)
+}
+model Usuario {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  senha     String
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,44 @@
+POST http://localhost:3000/api/licoes
+Content-Type: application/json
+
+{
+  "titulo": "Check-in e Despacho de Malas",
+  "categoria": "Aeroporto",
+  "conteudos": [
+    {
+      "idioma": "Inglês",
+      "termoEstrangeiro": "Where is the check-in counter?",
+      "termoPortugues": "Onde fica o balcão de check-in?",
+      "exemploFrase": "Excuse me, where is the check-in counter for flight 123?"
+    },
+    {
+      "idioma": "Inglês",
+      "termoEstrangeiro": "Here is my passport and boarding pass.",
+      "termoPortugues": "Aqui está o meu passaporte e a minha passagem.",
+      "exemploFrase": "Here is my passport and boarding pass for verification."
+    }
+  ]
+}
+### Testar Registo de Utilizador
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "aluno@teste.com",
+  "senha": "1234567"
+}
+
+### Testar Login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "aluno@teste.com",
+  "senha": "1234567"
+}
+
+### Listar todas as lições criadas
+GET http://localhost:3000/api/licoes
+
+### Buscar lição por ID (ex: ID 2)
+GET http://localhost:3000/api/licoes/2

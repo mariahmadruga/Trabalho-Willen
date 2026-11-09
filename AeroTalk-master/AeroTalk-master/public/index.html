@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= pageTitle || 'AeroTalk — English for Airports' %></title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header>
+ <div class="hero">
+  <div class="eyebrow">AeroTalk • English for Airports — Flight Operations & Passenger Services</div>
+  <h1>English for Airports</h1>
+  <p>Diálogos reais, fraseologia operacional padronizada da aviação civil, vocabulário técnico e simulador de exercícios para profissionais e passageiros.</p>
+  
+  <div class="chips">
+    <span class="chip">Check-in</span>
+    <span class="chip">Security Checkpoint</span>
+    <span class="chip">Boarding Gate</span>
+    <span class="chip">On Board</span>
+    <span class="chip">Operations (PAX / Slot)</span>
+    <span class="chip">Practice & Quizzes</span>
+    <!-- Área dinâmica de Autenticação / Usuário -->
+    <span id="authContainer">
+      <button class="chip chip-auth-btn" onclick="openAuthModal()">Entrar / Cadastrar</button>
+    </span>
+  </div>
+ </div>
+</header>
+
+<main>
+<div class="layout">
+<aside class="toc">
+ <h2>Índice de Conteúdo</h2>
+ <nav>
+  <a href="#aeroport">1. Situações no Aeroporto</a>
+  <a href="#dialogos">2. Diálogos Práticos</a>
+  <a href="#frases">3. Frases por Situação</a>
+  <a href="#interno">4. Comunicação Operacional</a>
+  <a href="#vocab">5. Vocabulário Essencial</a>
+  <a href="#quiz1">6. Quiz: Vocabulário</a>
+  <a href="#lacunas">7. Complete as Frases</a>
+  <a href="#traducao">8. Exercício de Tradução</a>
+  <a href="#interpretacao">9. Interpretação</a>
+  <a href="#quiz2">10. Quiz: Comunicação</a>
+  <a href="#tradinterno">11. Tradução Operacional</a>
+  <a href="#criar">12. Crie seus Diálogos</a>
+  <a href="#entrevista">13. Simulação de Atendimento</a>
+  <a href="#bancodados">14. Gestão de Lições (DB)</a>
+  <a href="#gabarito">15. Gabarito das Questões</a>
+ </nav>
+</aside>
+
+<div class="content">
+
+<!-- SEÇÃO 1 -->
+<section id="aeroport">
+<h2><span class="tag-num">01</span> Situações no Aeroporto</h2>
+<p class="muted">Panorama das principais áreas e etapas operacionais pelas quais os passageiros e a tripulação circulam diariamente.</p>
+<div class="grid2">
+ <div class="mini"><h3>Check-in Counter</h3><p>Documentos, bagagem, assentos, cartão de embarque e despacho de malas.</p></div>
+ <div class="mini"><h3>Security Checkpoint</h3><p>Raio-X, líquidos, notebooks, cintos e inspeção de segurança de passageiros.</p></div>
+ <div class="mini"><h3>Boarding Gate</h3><p>Chamadas por grupos, prioridades legais, alterações de portão e última chamada.</p></div>
+ <div class="mini"><h3>On Board the Aircraft</h3><p>Comissários, acomodação de bagagens superiores, refeições e instruções de voo.</p></div>
+ <div class="mini"><h3>Arrivals and Connections</h3><p>Esteiras de bagagem (baggage claim), conexões internacionais e transporte terrestre.</p></div>
+ <div class="mini"><h3>Airport Operations</h3><p>Comunicação técnica entre equipes, contagem de passageiros (PAX) e horários Zulu.</p></div>
+</div>
+</section>
+
+<!-- SEÇÃO 2 -->
+<section id="dialogos">
+<h2><span class="tag-num">02</span> Diálogos em Inglês com Tradução</h2>
+<p class="muted">Estude a estrutura das frases mais frequentes em cada momento da viagem com pronúncia nativa disponível.</p>
+
+<h3>Dialogue 1 — At the Check-in Counter</h3>
+<div class="dialogue">
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"Good morning. I'd like to check in for flight 452 to London."</div>
+    <div class="translation">Bom dia. Gostaria de fazer o check-in para o voo 452 para Londres.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Good morning. I'd like to check in for flight 452 to London.`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Check-in Agent</strong>
+    <div class="line-text">"Good morning. May I see your passport and ticket, please?"</div>
+    <div class="translation">Bom dia. Posso ver seu passaporte e sua passagem, por favor?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Good morning. May I see your passport and ticket, please?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"Of course. Here they are. I'd also like to check this suitcase."</div>
+    <div class="translation">Claro. Aqui estão. Também gostaria de despachar esta mala.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Of course. Here they are. I'd also like to check this suitcase.`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Check-in Agent</strong>
+    <div class="line-text">"Please put your suitcase on the scale. Would you prefer a window or an aisle seat?"</div>
+    <div class="translation">Por favor, coloque sua mala na balança. Você prefere um assento na janela ou no corredor?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Please put your suitcase on the scale. Would you prefer a window or an aisle seat?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"An aisle seat, please."</div>
+    <div class="translation">Um assento no corredor, por favor.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`An aisle seat, please.`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Check-in Agent</strong>
+    <div class="line-text">"Here's your boarding pass. Your gate is B12, and boarding starts at 9:30 a.m."</div>
+    <div class="translation">Aqui está seu cartão de embarque. Seu portão é o B12, e o embarque começa às 9h30.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Here's your boarding pass. Your gate is B12, and boarding starts at 9:30 a.m.`)">Ouvir Pronúncia</button>
+  </div>
+</div>
+
+<h3>Dialogue 2 — At Airport Security Checkpoint</h3>
+<div class="dialogue">
+  <div class="line">
+    <strong>Security Officer</strong>
+    <div class="line-text">"Please place your laptop and liquids in the tray."</div>
+    <div class="translation">Por favor, coloque seu notebook e os líquidos na bandeja.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Please place your laptop and liquids in the tray.`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"Do I need to take off my belt?"</div>
+    <div class="translation">Preciso tirar meu cinto?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Do I need to take off my belt?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Security Officer</strong>
+    <div class="line-text">"Yes, please. Remove any metal objects from your pockets as well."</div>
+    <div class="translation">Sim, por favor. Retire também todos os objetos metálicos dos bolsos.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Yes, please. Remove any metal objects from your pockets as well.`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"All right. Can I go through now?"</div>
+    <div class="translation">Tudo bem. Posso passar agora?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`All right. Can I go through now?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Security Officer</strong>
+    <div class="line-text">"Yes, you may proceed."</div>
+    <div class="translation">Sim, pode prosseguir.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Yes, you may proceed.`)">Ouvir Pronúncia</button>
+  </div>
+</div>
+
+<h3>Dialogue 3 — At the Boarding Gate</h3>
+<div class="dialogue">
+  <div class="line">
+    <strong>Gate Agent</strong>
+    <div class="line-text">"Attention, passengers on flight 728 to Madrid. Boarding will begin in ten minutes."</div>
+    <div class="translation">Atenção, passageiros do voo 728 para Madri. O embarque começará em dez minutos.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Attention, passengers on flight 728 to Madrid. Boarding will begin in ten minutes.`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"Excuse me, is this the correct gate for flight 728?"</div>
+    <div class="translation">Com licença, este é o portão correto para o voo 728?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Excuse me, is this the correct gate for flight 728?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Gate Agent</strong>
+    <div class="line-text">"Yes, it is. Please have your boarding pass ready."</div>
+    <div class="translation">Sim. Por favor, deixe seu cartão de embarque preparado.</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Yes, it is. Please have your boarding pass ready.`)">Ouvir Pronúncia</button>
+  </div>
+</div>
+
+<h3>Dialogue 4 — On Board the Aircraft</h3>
+<div class="dialogue">
+  <div class="line">
+    <strong>Flight Attendant</strong>
+    <div class="line-text">"Welcome aboard. May I help you with your bag?"</div>
+    <div class="translation">Bem-vindo a bordo. Posso ajudá-lo com sua bagagem?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Welcome aboard. May I help you with your bag?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"Yes, please. Could you put it in the overhead compartment?"</div>
+    <div class="translation">Sim, por favor. Você poderia colocá-la no compartimento superior?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Yes, please. Could you put it in the overhead compartment?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Flight Attendant</strong>
+    <div class="line-text">"Certainly. What is your seat number?"</div>
+    <div class="translation">Certamente. Qual é o número do seu assento?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`Certainly. What is your seat number?`)">Ouvir Pronúncia</button>
+  </div>
+  <div class="line">
+    <strong>Passenger</strong>
+    <div class="line-text">"It's 14B. Also, could I have a glass of water, please?"</div>
+    <div class="translation">É o 14B. Além disso, poderia me trazer um copo de água, por favor?</div>
+    <button class="btn-audio-mini" onclick="tocarVoz(`It's 14B. Also, could I have a glass of water, please?`)">Ouvir Pronúncia</button>
+  </div>
+</div>
+</section>
+
+<!-- SEÇÃO 3 -->
+<section id="frases">
+<h2><span class="tag-num">03</span> Frases Úteis por Situação</h2>
+<h3>Na Chegada e Balcão de Check-in</h3>
+<ul>
+  <li>“Excuse me, where is the check-in counter for [Airline]?” — Com licença, onde fica o balcão de check-in da [companhia aérea]?</li>
+  <li>“I've already checked in online. I just need to check this bag.” — Já fiz o check-in on-line. Só preciso despachar esta mala.</li>
+  <li>“Can I take this backpack as a carry-on item?” — Posso levar esta mochila como bagagem de mão?</li>
+  <li>“Is a window or aisle seat still available?” — Ainda há assento na janela ou no corredor disponível?</li>
+  <li>“Will my bag be checked through to my final destination?” — Minha mala vai direto ao destino final ou preciso retirá-la na conexão?</li>
+</ul>
+
+<h3>No Canal de Inspeção de Segurança (Security Checkpoint)</h3>
+<ul>
+  <li>“Do I need to remove my belt and shoes?” — Preciso tirar o cinto e os sapatos?</li>
+  <li>“Please remove your laptop, tablet and liquids from your bag and place them in the trays.” — Retire notebook, tablet e líquidos da mochila e coloque-os nas bandejas.</li>
+  <li>“You may proceed.” — Pode prosseguir.</li>
+</ul>
+
+<h3>No Portão de Embarque e Dentro da Aeronave</h3>
+<ul>
+  <li>“Attention, passengers on flight XXXX: the boarding gate has changed to gate Y.” — Atenção, o portão mudou para o portão Y.</li>
+  <li>“Final call for passenger [name] on flight XXXX.” — Última chamada para o passageiro [nome].</li>
+  <li>“Please fasten your seat belt, raise your tray table and return your seat back to the upright position.” — Aperte o cinto, levante a mesa e coloque o encosto na posição vertical.</li>
+  <li>“Where is the baggage claim carousel for flight XXXX?” — Onde fica a esteira de bagagem do voo XXXX?</li>
+</ul>
+</section>
+
+<!-- SEÇÃO 4 -->
+<section id="interno">
+<h2><span class="tag-num">04</span> Comunicação Operacional da Aviação</h2>
+<p class="muted">Terminologia técnica padronizada mundialmente usada por tripulações e equipes de solo.</p>
+
+<div class="note">
+  <strong>PAX:</strong> Abreviação operacional para <em>Passenger(s)</em> (passageiro ou passageiros).<br>
+  <em>Exemplo:</em> “How many PAX are confirmed for today's flight?” (Quantos passageiros estão confirmados?)
+</div>
+
+<div class="note">
+  <strong>Slot:</strong> Janela de horário rigorosamente autorizada pelo controle aéreo para pouso ou decolagem.<br>
+  <em>Exemplo:</em> “Let's speed up boarding, or we might miss our departure slot.” (Vamos agilizar o embarque para não perder o slot.)
+</div>
+
+<div class="note">
+  <strong>Overbooking:</strong> Venda de passagens acima da capacidade da aeronave prevendo ausências.<br>
+  <em>Exemplo:</em> “The flight has an overbooking situation affecting four passengers.” (O voo tem overbooking de 4 passageiros.)
+</div>
+
+<div class="note">
+  <strong>Zulu Time (UTC):</strong> Fuso horário mundial de referência padrão adotado universalmente na aviação.<br>
+  <em>Exemplo:</em> “The estimated departure time has changed to 19:30 Zulu.” (Partida prevista para 19h30 UTC.)
+</div>
+
+<div class="note">
+  <strong>Crew Rest Compartment:</strong> Espaço isolado com camas para descanso da tripulação em voos de longa distância.<br>
+  <em>Exemplo:</em> “My rest period has started. I'm going to the crew rest compartment.”
+</div>
+</section>
+
+<!-- SEÇÃO 5 -->
+<section id="vocab">
+<h2><span class="tag-num">05</span> Vocabulário Essencial</h2>
+<div class="table-wrap">
+<table>
+<thead>
+  <tr><th>Termo em Inglês</th><th>Equivalente em Português</th><th>Áudio</th></tr>
+</thead>
+<tbody>
+  <tr><td>Boarding pass</td><td>Cartão de embarque</td><td><button class="btn-audio-mini" onclick="tocarVoz('Boarding pass')">Ouvir</button></td></tr>
+  <tr><td>Aisle seat</td><td>Assento no corredor</td><td><button class="btn-audio-mini" onclick="tocarVoz('Aisle seat')">Ouvir</button></td></tr>
+  <tr><td>Window seat</td><td>Assento na janela</td><td><button class="btn-audio-mini" onclick="tocarVoz('Window seat')">Ouvir</button></td></tr>
+  <tr><td>To check a bag</td><td>Despachar uma mala</td><td><button class="btn-audio-mini" onclick="tocarVoz('To check a bag')">Ouvir</button></td></tr>
+  <tr><td>Overhead compartment</td><td>Compartimento superior de bagagem</td><td><button class="btn-audio-mini" onclick="tocarVoz('Overhead compartment')">Ouvir</button></td></tr>
+  <tr><td>Baggage claim</td><td>Esteira de restituição de bagagem</td><td><button class="btn-audio-mini" onclick="tocarVoz('Baggage claim')">Ouvir</button></td></tr>
+  <tr><td>Connecting flight</td><td>Voo de conexão</td><td><button class="btn-audio-mini" onclick="tocarVoz('Connecting flight')">Ouvir</button></td></tr>
+  <tr><td>Baggage scale</td><td>Balança de bagagem</td><td><button class="btn-audio-mini" onclick="tocarVoz('Baggage scale')">Ouvir</button></td></tr>
+  <tr><td>Proceed</td><td>Prosseguir</td><td><button class="btn-audio-mini" onclick="tocarVoz('Proceed')">Ouvir</button></td></tr>
+  <tr><td>Delayed flight</td><td>Voo atrasado</td><td><button class="btn-audio-mini" onclick="tocarVoz('Delayed flight')">Ouvir</button></td></tr>
+  <tr><td>Last call / Final call</td><td>Última chamada para o voo</td><td><button class="btn-audio-mini" onclick="tocarVoz('Last call')">Ouvir</button></td></tr>
+  <tr><td>Passport & Ticket</td><td>Passaporte e passagem aérea</td><td><button class="btn-audio-mini" onclick="tocarVoz('Passport and Ticket')">Ouvir</button></td></tr>
+  <tr><td>Security tray</td><td>Bandeja de inspeção de segurança</td><td><button class="btn-audio-mini" onclick="tocarVoz('Security tray')">Ouvir</button></td></tr>
+  <tr><td>Flight attendant</td><td>Comissário(a) de bordo</td><td><button class="btn-audio-mini" onclick="tocarVoz('Flight attendant')">Ouvir</button></td></tr>
+  <tr><td>Ground staff</td><td>Equipe de atendimento em solo</td><td><button class="btn-audio-mini" onclick="tocarVoz('Ground staff')">Ouvir</button></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- SEÇÃO 6 -->
+<section id="quiz1">
+<h2><span class="tag-num">06</span> Quiz: Vocabulário Aeroportuário</h2>
+<p class="muted">Teste seus conhecimentos. Escolha a alternativa correta e valide seu resultado.</p>
+<div id="quizVocabulary"></div>
+<button onclick="gradeQuiz('quizVocabulary','resultVocabulary')">Corrigir Exercício</button>
+<button class="secondary" onclick="resetQuiz('quizVocabulary','resultVocabulary')">Tentar Novamente</button>
+<div id="resultVocabulary" class="result" aria-live="polite"></div>
+</section>
+
+<!-- SEÇÃO 7 -->
+<section id="lacunas">
+<h2><span class="tag-num">07</span> Complete as Frases</h2>
+<p class="muted">Digite a palavra correta em inglês no espaço em branco de acordo com a dica fornecida.</p>
+<div id="fillExercises"></div>
+<button onclick="gradeFill()">Validar Respostas</button>
+<button class="secondary" onclick="resetFill()">Refazer</button>
+<div id="fillResult" class="result"></div>
+</section>
+
+<!-- SEÇÃO 8 -->
+<section id="traducao">
+<h2><span class="tag-num">08</span> Tradução para o Inglês</h2>
+<p class="muted">Escreva sua versão em inglês e clique no botão para conferir a resposta sugerida.</p>
+<div id="translationExercises"></div>
+</section>
+
+<!-- SEÇÃO 9 -->
+<section id="interpretacao">
+<h2><span class="tag-num">09</span> Interpretação de Diálogos</h2>
+<div class="grid2">
+  <div class="mini">
+    <h3>Dialogue A — Check-in</h3>
+    <p><strong>Agent:</strong> Good afternoon. Where are you flying today?</p>
+    <p><strong>Passenger:</strong> I'm flying to New York, with a connection in Miami.</p>
+    <p><strong>Agent:</strong> Are you checking any bags?</p>
+    <p><strong>Passenger:</strong> Yes, one suitcase.</p>
+    <ol style="padding-left: 20px; margin-top: 10px;">
+      <li>Where is the passenger's final destination?</li>
+      <li>Where is the connection?</li>
+      <li>How many suitcases is the passenger checking?</li>
+    </ol>
+  </div>
+  <div class="mini">
+    <h3>Dialogue B — Boarding Gate</h3>
+    <p><strong>Agent:</strong> Flight 215 to Lisbon is now boarding.</p>
+    <p><strong>Passenger:</strong> I thought boarding started at 6 p.m.</p>
+    <p><strong>Agent:</strong> It did, but the flight is now boarding by groups. Your group is Group 3.</p>
+    <ol start="4" style="padding-left: 20px; margin-top: 10px;">
+      <li>What is the flight number?</li>
+      <li>What is the destination?</li>
+      <li>Which group does the passenger belong to?</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- SEÇÃO 10 -->
+<section id="quiz2">
+<h2><span class="tag-num">10</span> Quiz: Comunicação Operacional</h2>
+<p class="muted">Escolha o termo operacional adequado para cada sentença.</p>
+<div id="quizOperations"></div>
+<button onclick="gradeQuiz('quizOperations','resultOperations')">Corrigir</button>
+<button class="secondary" onclick="resetQuiz('quizOperations','resultOperations')">Tentar Novamente</button>
+<div id="resultOperations" class="result" aria-live="polite"></div>
+</section>
+
+<!-- SEÇÃO 11 -->
+<section id="tradinterno">
+<h2><span class="tag-num">11</span> Traduza a Comunicação Interna</h2>
+<p class="muted">Pratique a interpretação de comandos e avisos reais emitidos nos sistemas de solo.</p>
+<ol style="padding-left: 24px; margin: 14px 0;">
+  <li>"How many PAX are confirmed for today's flight?"</li>
+  <li>"We need to complete boarding before the departure slot."</li>
+  <li>"We have an overbooking situation with four passengers."</li>
+  <li>"Please check the no-show passenger list."</li>
+  <li>"The estimated departure time is 19:30 Zulu."</li>
+  <li>"Boarding has been completed."</li>
+  <li>"The captain has requested an updated weather report."</li>
+  <li>"We are waiting for clearance to push back."</li>
+</ol>
+</section>
+
+<!-- SEÇÃO 12 -->
+<section id="criar">
+<h2><span class="tag-num">12</span> Crie seus Próprios Diálogos</h2>
+<p class="muted">Escreva sua conversa simulada em inglês. Utilize o botão de copiar para salvar o texto.</p>
+<div class="practice">
+  <h3>Situação 1 — Check-in e Assento</h3>
+  <p>Um passageiro vai para Londres, quer despachar uma mala e prefere janela. O agente pede o passaporte e informa o portão.</p>
+  <textarea id="ownDialogue1" placeholder="Passenger: Good morning. I'd like to check in..."></textarea>
+  <button onclick="copyText('ownDialogue1')">Copiar Diálogo</button>
+</div>
+<div class="practice">
+  <h3>Situação 2 — Portão de Embarque Alterado</h3>
+  <p>O funcionário avisa que o voo mudou do portão B12 para o C7 e orienta os passageiros.</p>
+  <textarea id="ownDialogue2" placeholder="Gate Agent: Attention all passengers on flight..."></textarea>
+  <button onclick="copyText('ownDialogue2')">Copiar Diálogo</button>
+</div>
+</section>
+
+<!-- SEÇÃO 13 -->
+<section id="entrevista">
+<h2><span class="tag-num">13</span> Simulação de Entrevista e Atendimento</h2>
+<p class="muted">Responda em inglês como se estivesse atuando no atendimento do aeroporto ou em uma entrevista de seleção.</p>
+<ol style="padding-left: 24px; margin: 14px 0;">
+  <li>How would you help a passenger who has lost their boarding pass?</li>
+  <li>What would you say to a passenger whose flight has been delayed?</li>
+  <li>How would you handle a passenger who is angry about overbooking?</li>
+  <li>Why is clear communication important in airport operations?</li>
+</ol>
+<textarea id="interviewAnswers" placeholder="Write your answers in English here..."></textarea>
+<button onclick="copyText('interviewAnswers')">Copiar Respostas</button>
+</section>
+
+<!-- SEÇÃO 14: BANCO DE DADOS POSTGRESQL / DOCKER -->
+<section id="bancodados">
+<h2><span class="tag-num">14</span> Gestão de Lições</h2>
+<p class="muted">Integração RESTful com banco de dados PostgreSQL rodando no Docker via Express e Prisma ORM.</p>
+
+<div class="crud-container">
+  <!-- FORMULÁRIO DE CADASTRO -->
+  <div class="crud-card">
+    <h3>Cadastrar Nova Lição</h3>
+    <form id="formCriarLicao" onsubmit="salvarLicaoNoBanco(event)">
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Título da Lição:</label>
+        <input type="text" id="inputLicaoTitulo" placeholder="Ex: Fraseologia de Emergência" required>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Categoria:</label>
+        <select id="inputLicaoCategoria">
+          <option value="Atendimento">Atendimento / Check-in</option>
+          <option value="Segurança">Segurança / Raio-X</option>
+          <option value="Embarque">Portão de Embarque</option>
+          <option value="Operacional">Comunicação Operacional</option>
+          <option value="Bordo">A bordo da Aeronave</option>
+        </select>
+      </div>
+      <button type="submit" style="width: 100%; margin: 8px 0 0;">Gravar Lição</button>
+      <p id="licaoFeedback" style="font-size: 0.85rem; margin-top: 10px;"></p>
+    </form>
+  </div>
+
+  <!-- LISTA DINÂMICA VIA FETCH GET -->
+  <div class="crud-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+      <h3 style="margin: 0;">Lições Registradas</h3>
+      <button class="secondary" style="padding: 5px 12px; font-size: 0.8rem; margin: 0;" onclick="carregarLicoesDoBanco()">Atualizar Lista</button>
+    </div>
+    <div id="listaLicoes" class="lesson-list">
+      <p class="muted" style="text-align: center; padding: 20px;">Carregando lições do banco...</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SEÇÃO 15 -->
+<section id="gabarito">
+<h2><span class="tag-num">15</span> Gabarito & Impressão</h2>
+<div class="note">
+  <strong>Gabarito da Interpretação:</strong><br>
+  <strong>Dialogue A:</strong> 1. New York | 2. Miami | 3. One suitcase.<br>
+  <strong>Dialogue B:</strong> 4. Flight 215 | 5. Lisbon | 6. Group 3.
+</div>
+<button onclick="window.print()">Imprimir / Salvar como PDF</button>
+</section>
+
+</div>
+</div>
+</main>
+
+<!-- MODAL DE AUTENTICAÇÃO -->
+<div id="authModal" class="auth-modal" style="display: none;">
+  <div class="auth-card">
+    <h3>Acesso do Usuário</h3>
+    <p class="sub">Informe suas credenciais para autenticar</p>
+    <input type="email" id="modal-email" placeholder="E-mail cadastrado">
+    <input type="password" id="modal-senha" placeholder="Senha de acesso">
+    <div class="auth-buttons">
+      <button onclick="executarLogin()">Entrar</button>
+      <button class="secondary" onclick="executarRegisto()">Criar Conta</button>
+    </div>
+    <p id="modal-msg" style="margin-top: 12px; font-size: 0.88rem; font-weight: 600;"></p>
+    <button onclick="closeAuthModal()" class="secondary" style="margin-top: 10px; width: 100%;">Fechar</button>
+  </div>
+</div>
+
+<footer>
+  <p>AeroTalk • English for Airports — Plataforma Didática de Aviação.</p>
+  <p style="font-size: 0.78rem; margin-top: 4px; color: #4b5563;">Laboratório de Programação • UNIFACVEST</p>
+  <p class="photo-credit">
+    Imagem de fundo da página: <a href="https://commons.wikimedia.org/wiki/File:Avi%C3%A3o_da_GOL_no_c%C3%A9u_paulista.jpg" target="_blank" rel="noopener noreferrer">Avião da GOL no céu paulista</a>,
+    por <a href="https://commons.wikimedia.org/wiki/User:Boaventuravinicius" target="_blank" rel="noopener noreferrer">Boaventuravinicius</a>.
+    Escurecida para melhorar a legibilidade. Licença
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.
+    Imagem de fundo do acesso: <a href="https://pixnio.com/license" target="_blank" rel="noopener noreferrer">Pixnio</a>.
+  </p>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
